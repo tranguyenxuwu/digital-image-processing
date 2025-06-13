@@ -6,18 +6,15 @@
 
 ##### Khi chạy `cell 2`, chương trình sẽ chạy như sau:
 
-- Load ảnh cần xử lý, (ở đây lấy `bird.png` làm ví dụ), khi load kèm theo `.convert("L")` để chuyển ảnh về grayscale
-- Chuyển đổi ảnh được load về dạng array để dễ dàng hơn cho các bước xử lý tiếp theo (bản chất ảnh là một ma trận các giá trị pixel, chuyển về array, là mỗi giá trị pixel thành dạng số mà chúng ta có thể tính toán và thay đổi)
-- lấy `255` trừ đi giá trị pixel hiện có trong ảnh, điều này sẽ làm đảo ngược màu của ảnh | ví dụ: `255 - 0(giá trị pixel gốc)` thì pixel đen -> trắng
+- Chuyển đổi ảnh được load về dạng grayscale với `.convert("L")` rồi chuyển về dạng array để dễ dàng hơn cho các bước xử lý tiếp theo (bản chất ảnh là một ma trận các giá trị pixel, chuyển về array, là mỗi giá trị pixel thành dạng số mà chúng ta có thể tính toán và thay đổi). Sau đó lấy `255` trừ đi giá trị pixel hiện có trong ảnh, điều này sẽ làm đảo ngược màu của ảnh | ví dụ: `255 - 0(giá trị pixel gốc)` thì pixel đen -> trắng
 - chuyển đổi ảnh từ dạng array về lại ảnh bình thường và hiển thị hình ảnh mới đã được xử lý
 
 ### 1.2 Gamma correction
 
 ##### Khi chạy `cell 3`, chương trình sẽ chạy như sau:
 
-- Load ảnh cần xử lý, (ở đây lấy `bird.png` làm ví dụ), khi load kèm theo `.convert("L")` để chuyển ảnh về grayscale
-- Chuyển đổi ảnh sang dạng array... như đã nói ở trên
-- Đặt giá trị Gamma mặc định là `0.5`, có thể thay đổi tùy thích
+- Chuyển đổi ảnh được load về dạng grayscale với `.convert("L")` rồi chuyển về dạng array để dễ dàng hơn cho các bước xử lý tiếp theo
+- Đặt giá trị Gamma mặc định là `0.5`, có thể thay đổi
 - Thực hiện chuyển đổi kiểu dữ liệu của các pixel sang `float` để thực hiện các phép toán chính xác
 - Tìm giá trị pixel lớn nhất trong toàn bộ array thông qua `np.max()`
 - Chuẩn hóa các giá trị pixel (normalize) về thang giá trị `[0,1]` để thuận tiện hơn cho việc xử lý, trong phần này sẽ `+1` vào mỗi pixel trước để tránh lỗi `divide by zero encountered`, đảm bảo giá trị dương
@@ -32,8 +29,7 @@
 
 ##### Khi chạy `cell 4`, chương trình sẽ chạy như sau:
 
-- Load ảnh cần xử lý, (ở đây lấy `bird.png` làm ví dụ), khi load kèm theo `.convert("L")` để chuyển ảnh về grayscale
-- Chuyển đổi ảnh sang dạng array... như đã nói ở trên
+- Chuyển đổi ảnh được load về dạng grayscale với `.convert("L")` rồi chuyển về dạng array để dễ dàng hơn cho các bước xử lý tiếp theo
 - Thực hiện chuyển đổi kiểu dữ liệu của các pixel sang `float` để thực hiện các phép toán chính xác
 - Tìm giá trị pixel lớn nhất trong toàn bộ array thông qua `np.max()`
 - Normalize sử dụng công thức nén dải rộng `(128*np.log(1+img1)) / np.log(1+max_value)` để tối ưu lại các pixel làm cho ảnh dễ nhìn hơn, có đảm bảo `+1` để tránh lỗi `divide by zero encountered`
@@ -46,8 +42,7 @@
 
 ##### Khi chạy `cell 5`, chương trình sẽ chạy như sau:
 
-- Load ảnh cần xử lý, (ở đây lấy `bird.png` làm ví dụ), khi load kèm theo `.convert("L")` để chuyển ảnh về grayscale
-- Chuyển đổi ảnh sang dạng array... như đã nói ở trên
+- Chuyển đổi ảnh được load về dạng grayscale với `.convert("L")` rồi chuyển về dạng array để dễ dàng hơn cho các bước xử lý tiếp theo
 - Dùng `iml.flatten()` chuyển mảng từ dạng nhiều chiều `[1, 2], [3, 4]` về 1 chiều `[1,2,3,4]` để tiện cho việc ánh xạ giá pixel.
 - tính toán histogram của ảnh bằng hàm `np.histogram()`
 - tính toán hàm phân phối tích lũy (CDF) của histogram bằng hàm `np.cumsum()`
@@ -59,8 +54,7 @@
 
 ##### Khi chạy `cell 6`, chương trình sẽ chạy như sau:
 
-- Load ảnh cần xử lý, (ở đây lấy `bird.png` làm ví dụ), khi load kèm theo `.convert("L")` để chuyển ảnh về grayscale
-- Chuyển đổi ảnh sang dạng array... như đã nói ở trên
+- Chuyển đổi ảnh được load về dạng grayscale với `.convert("L")` rồi chuyển về dạng array để dễ dàng hơn cho các bước xử lý tiếp theo
 - Tìm giá trị pixel lớn nhất trong toàn bộ array thông qua `np.max()` và nhỏ nhất bằng `np.min()`
 - chuyển đổi về `float` để thực hiện các phép toán chính xác
 - kéo giãn độ tương phản của ảnh bằng công thức `255 * (img - min) / (max - min)`
